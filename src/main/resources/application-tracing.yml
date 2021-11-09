@@ -1,0 +1,51 @@
+mimosa:
+  tracing:
+    extra:
+      fields:
+        - "transactionId"
+        - "sourceId"
+        - "clientIp"
+
+info:
+  response:
+    id: ${spring.application.name}
+
+logging:
+  pattern:
+    console: "%clr(%date){faint} %clr(%5p) [${spring.application.name},%X{traceId},%X{spanId},%X{parentSpanId},%X{traceSampled},%X{system-id},%X{operator-id}] %clr(${PID}){magenta} %clr(---){faint} %clr([%t]){faint} %clr(%logger.%M#%line){cyan} %clr(:){faint} %m%n%wEx"
+
+opentracing:
+  jaeger:
+    enabled: true
+    enable-b3-propagation: true
+    enable128-bit-traces: true
+    udp-sender:
+      host: ${JAEGER_HOST:localhost}
+      port: ${JAEGER_PORT:6831}
+    log-spans: true
+    const-sampler:
+      decision: true
+    probabilistic-sampler:
+      sampling-rate: 1.00
+  spring:
+    web:
+      enabled: true
+      client:
+        enabled: true
+    cloud:
+      feign:
+        enabled: true
+      reactor:
+        enabled: false
+      async:
+        enabled: true
+      log:
+        enabled: true
+      scheduled:
+        enabled: true
+      redis:
+        enabled: true
+      jdbc:
+        enabled: true
+      jms:
+        enabled: false

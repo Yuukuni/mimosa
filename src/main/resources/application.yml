@@ -1,0 +1,27 @@
+mimosa:
+  web:
+    strict: false
+
+spring:
+  application:
+    name: getting-started
+
+logging:
+  level:
+    sql: DEBUG
+    com.zaxxer.hikari.HikariConfig: DEBUG
+    jdbc:
+      resultsettable: INFO
+      sqltiming: INFO
+      sqlonly: FATAL
+      audit: FATAL
+      resultset: FATAL
+      connection: FATAL
+log4jdbc:
+  dump:
+    sql:
+      addsemicolon: true
+      maxlinelength: 0
+  trim:
+    sql:
+      extrablanklines: false
