@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import tw.com.fcb.mimosa.http.APIErrorT9nException;
+import tw.com.fcb.mimosa.tracing.Traced;
 
+@Traced
 @RequiredArgsConstructor
 @Service
 public class UserService {

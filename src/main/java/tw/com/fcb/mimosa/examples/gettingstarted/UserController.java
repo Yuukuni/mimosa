@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import tw.com.fcb.mimosa.http.APIRequest;
 import tw.com.fcb.mimosa.http.APIResponse;
+import tw.com.fcb.mimosa.tracing.Traced;
 
+@Traced
 @Validated
 @RequiredArgsConstructor
 @RestController
@@ -49,9 +51,17 @@ public class UserController {
 	
 	@GetMapping("/UserDatabase")
 	APIResponse<List<UserDto>> getUsers2() {
-		return APIResponse.success(service.getUsers().stream()
+//		return APIResponse.success(service.getUsers().stream()
+//				.map(mapper::from)
+//				.collect(Collectors.toList()));
+		
+		List<UserDto> found = service.getUsers().stream()
 				.map(mapper::from)
-				.collect(Collectors.toList()));
+				.collect(Collectors.toList());
+		if(found.isEmpty()) {
+			return APIResponse.error(err -> err.code("").message(""));
+		}
+		return APIResponse.success(found);
 	}
 	
 	@GetMapping("/UserNames")

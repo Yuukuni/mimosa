@@ -5,6 +5,8 @@ mimosa:
         - "transactionId"
         - "sourceId"
         - "clientIp"
+    traced:
+      style: PRETTY_PRINT
 
 info:
   response:
