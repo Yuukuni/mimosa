@@ -1,0 +1,18 @@
+mimosa:
+  security:
+    enabled: true
+    backend-auth-service.url: "http://${server.address:localhost}:${server.port:8080}/backend-auth"
+    strict: true
+    ignoring:
+      - path:
+          #- "/**"
+          - "/v3/api-docs"
+          - "/v3/api-docs/**"
+          - "/swagger-ui"
+          - "/swagger-ui/**"
+          - "/h2-console"
+          - "/h2-console/**"
+          - "/actuator"
+          - "/actuator/**"
+          - "/swagger-ui.html"
+          - "/backend-auth/**"

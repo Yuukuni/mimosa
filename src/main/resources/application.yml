@@ -1,6 +1,8 @@
 mimosa:
   web:
     strict: false
+  security:
+    enabled: false
 
 spring:
   application:

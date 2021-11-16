@@ -58,9 +58,9 @@ public class UserController {
 		List<UserDto> found = service.getUsers().stream()
 				.map(mapper::from)
 				.collect(Collectors.toList());
-		if(found.isEmpty()) {
-			return APIResponse.error(err -> err.code("").message(""));
-		}
+//		if(found.isEmpty()) {
+//			return APIResponse.error(err -> err.code("").message(""));
+//		}
 		return APIResponse.success(found);
 	}
 	

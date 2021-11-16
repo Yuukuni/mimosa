@@ -26,7 +26,10 @@ import tw.com.fcb.mimosa.http.APIResponse;
 @RequiredArgsConstructor
 public class MyClientController {
 	
-	final UserRestTemplate service;
+	//第一種方法
+	//final UserRestTemplate service;
+	//第二種方法
+	final UserClient service;
 	
 	@GetMapping
 	APIResponse<List<UserDto>> getUsers(){
