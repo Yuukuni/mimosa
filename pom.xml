@@ -132,6 +132,11 @@
       <groupId>tw.com.fcb.mimosa</groupId>
       <artifactId>mimosa-security-ext</artifactId>
     </dependency>
+    
+    <dependency>
+      <groupId>tw.com.fcb.mimosa</groupId>
+      <artifactId>mimosa-multicache-ext</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

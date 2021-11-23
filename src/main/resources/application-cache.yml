@@ -1,0 +1,12 @@
+mimosa:
+  cache:
+    caffeine:
+      expire-after-access: 60000
+      names:
+        "[mimosa:security:auth:token]":
+          expire-after-access: 600000
+    redis:
+      default-expiration: 120000
+      names:
+        "[mimosa:security:auth:token]":
+          default-expiration: 1800000

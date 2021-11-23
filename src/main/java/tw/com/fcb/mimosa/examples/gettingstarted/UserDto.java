@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UserDto {
 	String userName;
+	String age;
 }
