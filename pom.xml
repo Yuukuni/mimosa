@@ -137,6 +137,12 @@
       <groupId>tw.com.fcb.mimosa</groupId>
       <artifactId>mimosa-multicache-ext</artifactId>
     </dependency>
+    
+    <dependency>
+      <groupId>tw.com.fcb.mimosa</groupId>
+      <artifactId>mimosa-hello-world-ext</artifactId>
+      <version>0.0.15</version>
+    </dependency>
   </dependencies>
 
   <build>
